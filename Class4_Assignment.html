@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator - Class 4 Assignment</title>
+	<style>
+
+	.inputs {
+		width: 100%;
+		height: 100px;
+	}
+	input {
+		margin-top: 5px;
+		float: left;
+		margin-left: 25px;
+	}
+	header {
+		margin-top: 15px;
+		color: blue;
+		margin-left: 15px;
+		float:left;
+		margin-bottom: 20px;
+
+	}
+	h2 {
+		margin-left:10%;
+	}
+
+	.radius {
+		margin-right: 20%;
+	}
+
+	.buttons{
+	width:100%;
+	height: 100px;
+	}
+
+	button {
+		
+		margin-right: 5px;
+		height:50px;
+		width: 70px;
+		margin-top: 20px;
+		float:left;
+	}
+	.outputs {
+		width: 100%;
+		height: 100px;
+	}
+	</style>
+</head>
+<body>
+	<h2>This is a math calculator! Make your selections below. </h2>
+	<div class="inputs">
+	<header>Input a Number:</header>
+	<input class="number" type="text" id="number">  </input>
+
+	<header>Input Another Number:</header>
+	<input class="number2" type="text" id="number2"> </input>
+
+	<header>Input A Radius:</header>
+	<input class="radius" type="text" id="radius"> </input>
+</div>
+<div class="outputs">
+	<header> Output:</header>
+	<input class="output" type="text" id="output"> </input>
+</div>
+
+<div class="buttons">
+	<button class="squareNumber">Square Number</button>
+	<button class="halfNumber">Half Number</button>
+	<button class="areaOfCircle">Area of Circle</button>
+	<button class="percentOf">Percent Of</button>
+
+</div>
+</body>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<script>
+
+var number2 = $(".number2").val();
+var radius = $(".radius").val();
+
+/* var sqaurenumber = function squarenumber(number) {
+	console.log("The result of squaring the number " + number + " is " + number*number + ".");
+}; */
+var number = $(".number").val();
+
+$(".squareNumber").click(function() { 
+	$(".output").val("The square of " + $(".number").val() + " is " + $(".number").val()*$(".number").val());
+	alert("The result of squaring the number " + $(".number").val() + " is " + $(".number").val()*$(".number").val());
+ });
+
+$(".halfNumber").click(function() {
+	
+	$(".output").val("Half of " + $(".number").val() + " is " + $(".number").val()/2 + ".");
+alert("Half of " + $(".number").val() + " is " + $(".number").val()/2 + ".");
+});
+
+$(".percentOf").click(function() {
+	var percentage = ($(".number").val()/$(".number2").val())* 100;
+	$(".output").val($(".number").val() + " is " + percentage + "% of " + $(".number2").val());
+	alert($(".number").val() + " is " + percentage + "% of " + $(".number2").val());
+
+});
+
+$(".areaOfCircle").click(function() {
+	area = 3.14*($(".radius").val()*$(".radius").val());
+	area = area.toFixed(2);
+	$(".output").val("Area of circle with radius " + $(".radius").val() + " is " + area);
+	alert("The area for a circle with radius " + $(".radius").val() + " is " + area);
+
+});
+</script>
+</html>
